@@ -1,0 +1,47 @@
+<div class="login-container">
+    <div class="container h-100">
+        <form [formGroup]="loginForm" (ngSubmit)="onSignIn()" class="h-100">
+            <div class="row d-flex align-items-center h-100">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="card p-4 shadow round">
+                        <div class="text-center mb-5">
+                            <img src="../../../assets/imgs/hyper.svg" alt="Image" height="50" class="mb-3">
+                            <h2 class="text-900 text-3xl fw-medium mb-3">Welcome Back</h2>
+                            <span class="text-600 fw-bold line-height-3">Don't have an account?</span>
+                            <a class="fw-medium no-underline ms-2  cursor-pointer">Create today!</a>
+                        </div>
+
+                        <div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-medium">Email</label>
+                                <input type="email" formControlName="email" pInputText placeholder="Enter here"
+                                    class="w-100 mb-3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="d-block fw-medium mb-2">Password</label>
+                                <input type="password" formControlName="password" placeholder="Enter here" pInputText
+                                    class="w-100 mb-3">
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mb-5">
+                                <div class="d-flex align-items-center">
+                                    <p-checkbox id="rememberme1" [binary]="true" styleClass="me-2"
+                                        placeholder="Select City"></p-checkbox>
+                                    <label for="rememberme1" class="text-900">Remember me</label>
+                                </div>
+                                <a class="fw-medium no-underline ml-2  text-right cursor-pointer">Forgot
+                                    password?</a>
+                            </div>
+                            <!-- <div class="d-flex"> -->
+                            <button pButton pRipple class=" w-100 py-2 me-2 text-center" [disabled]="!loginForm.valid"
+                                type="submit">Sign
+                                in</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<p-toast [hideTransitionOptions]="'5000ms'" life="'5000ms'"></p-toast>
